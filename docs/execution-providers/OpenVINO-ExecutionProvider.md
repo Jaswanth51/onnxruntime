@@ -334,6 +334,10 @@ The following table lists all the available configuration options for API 2.0 an
 | enable_opencl_throttling | string | True/False | boolean | This option enables OpenCL queue throttling for GPU devices (reduces CPU utilization when using GPU). |
 | enable_qdq_optimizer | string | True/False | boolean | This option enables QDQ Optimization to improve model performance and accuracy on NPU. |
 | load_config | string | Any custom JSON path | string | This option enables a feature for loading custom JSON OV config during runtime which sets OV parameters. |
+| enable_causallm | string | True/False | boolean | Enables Causal LM Compilation for ORT GenAI OVEP Pass. Supports Large Language Models and Small Language Models inference. |
+| disable_dynamic_shapes | string | True/False | boolean | Rewrite dynamic shaped models to static shape at runtime and execute. Improves performance for models with dynamic input shapes. |
+| reshape_input | string | JSON format: {"input_name": [dim1, dim2, ...]} | string | Used for reshaping the OpenVINO input tensor shape at runtime. Allows dynamic input shape handling. |
+| model_priority | string | JSON format: {"input_name": [dim1, dim2, ...]} | string |High-level OpenVINO model priority hint. Defines what model should be provided with more performant bounded resource first. |
 
 
 Valid Hetero or Multi or Auto Device combinations:
